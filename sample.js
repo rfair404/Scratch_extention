@@ -16,6 +16,10 @@
         // code to do something goes here
     };
 	
+	ext.start = function() {
+        // code to do something goes here
+    };
+	
 
 	
 	ext.say = function() {
@@ -25,6 +29,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
+		    ['h', 'Toby start', 'start'],
             [' ', 'Weather Broadcast', 'weatherBroadcast'],
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
