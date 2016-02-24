@@ -225,5 +225,3 @@ RawBlameHistory     212 lines (183 sloc)  6.7 KB
     };
     ScratchExtensions.register('PicoBoard', descriptor, ext, {type: 'serial'});
 })({});
-Status API Training Shop Blog About Pricing
-© 2016 GitHub, Inc. Terms Privacy Security Contact Help
