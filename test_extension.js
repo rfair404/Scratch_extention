@@ -1,19 +1,4 @@
-Skip to content
-This repository  
-Search
-Pull requests
-Issues
-Gist
- @pushadon
- Unwatch 1
-  Star 0
-  Fork 0 pushadon/Scratch_extention
- Code  Issues 0  Pull requests 0  Wiki  Pulse  Graphs  Settings
-Branch: master Find file Copy pathScratch_extention/test_extension.js
-d3b4929  an hour ago
- Don_Chiang add new extension file
-0 contributors
-RawBlameHistory     212 lines (183 sloc)  6.7 KB
+
 // picoExtension.js
 // Shane M. Clements, February 2014
 // PicoBoard Scratch Extension
