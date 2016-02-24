@@ -31,7 +31,7 @@
     var descriptor = {
         blocks: [
             ['h', 'when %m.booleanSensor', 'whenSensorConnected', 'button pressed'],
-            [' ', 'Canendar Schedule', 'canendarSchedule'],
+            [' ', 'Canendar Schedule', 'calendarSchedule'],
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
