@@ -18,7 +18,7 @@
 	
 
 	
-	ext.tobySay = function() {
+	ext.say = function() {
 	
 	};
 
@@ -26,12 +26,12 @@
     var descriptor = {
         blocks: [
             [' ', 'Weather Broadcast', 'weatherBroadcast'],
-			['', 'Toby Say %n ', 'tobySay', 'Hello, I am Toby']
+			['', 'Toby Say %n ', 'say', 'Hello, I am Toby']
 
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
 
     // Register the extension
-    ScratchExtensions.register('Sample extension', descriptor, ext);
+    ScratchExtensions.register('Toby', descriptor, ext);
 })({});
