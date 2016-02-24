@@ -15,21 +15,22 @@
     ext.doSomething = function() {
         // code to do something goes here
     };
+	
+	ext.whenConnected = function() {
+	
+	};
+	
+	ext.tobySay = function() {
+	
+	};
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             [' ', 'do something', 'doSomething']
 			['h', 'when device is connected', 'whenConnected'],
-			[' ', 'connect %m.hwOut to pin %n', 'connectHW', 'led A', 3],
-			[' ', 'connect %m.hwIn to analog %n', 'connectHW', 'rotation knob', 0],
-			['-'],
-			[' ', 'set %m.leds %m.outputs', 'digitalLED', 'led A', 'on'],
-			[' ', 'set %m.leds brightness to %n%', 'setLED', 'led A', 100],
-			[' ', 'change %m.leds brightness by %n%', 'changeLED', 'led A', 20],
-			['-'],
-			[' ', 'rotate %m.servos to %n degrees', 'rotateServo', 'servo A', 180],
-			[' ', 'rotate %m.servos by %n degrees', 'changeServo', 'servo A', 20],
+			[' ', 'Toby Say %s.outputs', 'tobySay', 'abc'],
+
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
