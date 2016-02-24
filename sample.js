@@ -26,7 +26,7 @@
     var descriptor = {
         blocks: [
             [' ', 'Weather Broadcast', 'weatherBroadcast'],
-			['', 'Toby Say %n ', 'say', 'Hello, I am Toby']
+			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
