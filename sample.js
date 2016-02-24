@@ -12,7 +12,7 @@
 
     // For information on writing Scratch extensions, see the ScratchX wiki:
     // https://github.com/LLK/scratchx/wiki#writing-extensions-for-scratchx
-    ext.weatherBroadcast = function() {
+    ext.canendarSchedule = function() {
         // code to do something goes here
     };
 	
@@ -23,15 +23,15 @@
 	
 
 	
-	ext.say = function() {
+	ext.whenSensorPass = function() {
 	
 	};
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-		    ['h', 'Toby start', 'start'],
-            [' ', 'Weather Broadcast', 'weatherBroadcast'],
+            ['h', 'when sensor', 'whenSensorPass'],			
+            [' ', 'Canendar Schedule', 'canendarSchedule'],
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
