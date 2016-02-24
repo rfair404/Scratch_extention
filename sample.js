@@ -16,9 +16,8 @@
         // code to do something goes here
     };
 	
-	
-    ext.whenSensorConnected = function(which) {
-        return true;
+
+    ext.whenSensorConnected = function() {
     };	
 	
 	ext.say = function() {
@@ -30,14 +29,12 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['h', 'when %m.booleanSensor', 'whenSensorConnected', 'button pressed'],
+            ['h', 'when', 'whenSensorConnected'],
             [' ', 'Canendar Schedule', 'calendarSchedule'],
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
-		menus: {
-            booleanSensor: ['button pressed', 'A connected', 'B connected', 'C connected', 'D connected'],		
-		},
+
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
 
