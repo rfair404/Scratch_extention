@@ -18,6 +18,7 @@
 	
 	ext.start = function() {
         // code to do something goes here
+		return ture;
     };
 	
 
