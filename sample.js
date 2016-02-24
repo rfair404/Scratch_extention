@@ -30,7 +30,7 @@
         blocks: [
 		    ['h', 'Toby start', 'start'],
             [' ', 'Calendar Schedule', 'calendarSchedule'],
-			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
+			['', 'Toby Say %n ', 'say', 'Hello, I am Toby']
 
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
