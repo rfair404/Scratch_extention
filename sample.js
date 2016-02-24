@@ -18,7 +18,7 @@
 	
 	
     ext.whenSensorConnected = function(which) {
-        return true;;
+        return true;
     };	
 	
 	ext.say = function() {
