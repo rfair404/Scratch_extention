@@ -12,23 +12,20 @@
 
     // For information on writing Scratch extensions, see the ScratchX wiki:
     // https://github.com/LLK/scratchx/wiki#writing-extensions-for-scratchx
-    ext.canendarSchedule = function() {
+    ext.calendarSchedule = function() {
         // code to do something goes here
     };
 	
-	ext.start = function() {
-        // code to do something goes here
-		return ture;
-    };
 	
     ext.whenSensorConnected = function(which) {
-        return getSensorPressed(which);
+        return true;;
     };	
-
 	
-	ext.whenSensorPass = function() {
+	ext.say = function() {
 	
 	};
+
+	
 
     // Block and block menu descriptions
     var descriptor = {
