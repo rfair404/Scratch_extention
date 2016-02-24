@@ -12,7 +12,7 @@
 
     // For information on writing Scratch extensions, see the ScratchX wiki:
     // https://github.com/LLK/scratchx/wiki#writing-extensions-for-scratchx
-    ext.calendarSchedule = function() {
+    ext.weatherBroadcast = function() {
         // code to do something goes here
     };
 	
@@ -25,8 +25,8 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [' ', 'Calendar Schedule', 'calendarSchedule'],
-			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ']
+            [' ', 'Weather Broadcast', 'weatherBroadcast'],
+			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
