@@ -15,27 +15,20 @@
     ext.calendarSchedule = function() {
         // code to do something goes here
     };
+	
 
+	
 	ext.say = function() {
 	
 	};
-	
-	ext.hello = function() {
-	
-	};
-
-	
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [' ', 'Canendar Schedule', 'calendarSchedule'],
-            [' ', 'helo world', 'hello'],
-			
-			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
+            [' ', 'Calendar Schedule', 'calendarSchedule'],
+			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ']
 
         ],
-
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
 
