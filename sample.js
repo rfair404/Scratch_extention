@@ -18,6 +18,7 @@
 	
 
     ext.whenSensorConnected = function() {
+		return false;
     };	
 	
 	ext.say = function() {
