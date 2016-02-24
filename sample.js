@@ -16,9 +16,7 @@
         // code to do something goes here
     };
 	
-	ext.whenConnected = function() {
-	
-	};
+
 	
 	ext.tobySay = function() {
 	
@@ -28,7 +26,6 @@
     var descriptor = {
         blocks: [
             [' ', 'do something', 'doSomething']
-			['h', 'when device is connected', 'whenConnected'],
 			[' ', 'Toby Say %s.outputs', 'tobySay', 'abc'],
 
         ],
