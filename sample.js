@@ -19,6 +19,10 @@
 	ext.say = function() {
 	
 	};
+	
+	ext.hello = function() {
+	
+	};
 
 	
 
@@ -26,6 +30,8 @@
     var descriptor = {
         blocks: [
             [' ', 'Canendar Schedule', 'calendarSchedule'],
+            [' ', 'helo world', 'hello'],
+			
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
