@@ -21,6 +21,9 @@
 		return ture;
     };
 	
+    ext.whenSensorConnected = function(which) {
+        return getSensorPressed(which);
+    };	
 
 	
 	ext.whenSensorPass = function() {
@@ -30,11 +33,14 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['h', 'when sensor', 'whenSensorPass'],			
+            ['h', 'when %m.booleanSensor', 'whenSensorConnected', 'button pressed'],
             [' ', 'Canendar Schedule', 'canendarSchedule'],
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
         ],
+		menus: {
+            booleanSensor: ['button pressed', 'A connected', 'B connected', 'C connected', 'D connected'],		
+		},
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
 
