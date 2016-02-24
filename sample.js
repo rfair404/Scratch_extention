@@ -15,12 +15,7 @@
     ext.calendarSchedule = function() {
         // code to do something goes here
     };
-	
 
-    ext.whenSensorConnected = function() {
-		return false;
-    };	
-	
 	ext.say = function() {
 	
 	};
@@ -30,7 +25,6 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['h', 'when', 'whenSensorConnected'],
             [' ', 'Canendar Schedule', 'calendarSchedule'],
 			['', 'Toby Say %n ', 'say', 'Hello, I am Toby ha ha ha ']
 
