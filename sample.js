@@ -12,13 +12,13 @@
 
     // For information on writing Scratch extensions, see the ScratchX wiki:
     // https://github.com/LLK/scratchx/wiki#writing-extensions-for-scratchx
-    ext.say = function() {
+    ext.weatherBroadcast = function() {
         // code to do something goes here
     };
 	
 
 	
-	ext.weatherBroadcast = function() {
+	ext.tobySay = function() {
 	
 	};
 
@@ -26,12 +26,12 @@
     var descriptor = {
         blocks: [
             [' ', 'Weather Broadcast', 'weatherBroadcast'],
-			['', 'Toby Say %n ', 'say', 'Hello, I am toby']
+			['', 'Toby Say %n ', 'tobySay', 'Hello, I am Toby']
 
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
 
     // Register the extension
-    ScratchExtensions.register('Toby', descriptor, ext);
+    ScratchExtensions.register('Sample extension', descriptor, ext);
 })({});
