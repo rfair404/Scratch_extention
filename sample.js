@@ -33,5 +33,5 @@
     };
 
     // Register the extension
-    ScratchExtensions.register('Toby', descriptor, ext);
+    ScratchExtensions.register('TobyCode', descriptor, ext);
 })({});
