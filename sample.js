@@ -25,8 +25,8 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [' ', 'do something', 'doSomething']
-			['', 'Toby Say %n ', 'tobySay', 'hi'],
+            [' ', 'do something', 'doSomething'],
+			['', 'Toby Say %n ', 'tobySay', 'hi']
 
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
