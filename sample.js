@@ -141,7 +141,7 @@
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', 'Posts', 'get_posts'],
-            ['R', 'Post ID', 'get_post_id', 1],
+            ['R', 'Post ID', 'get_post_ids', 1],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
