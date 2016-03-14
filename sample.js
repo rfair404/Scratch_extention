@@ -92,6 +92,29 @@
              //  jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret);
+                console.log(postcounter_scratchx);
+                callback(ret[0]);
+              }
+
+
+        });
+        // postcounter_scratchx = postcounter_scratchx + 1;
+    };
+
+     ext.get_post_next_post = function(callback, scratch_id) {
+            console.log(scratch_id);
+            //find out what the first thing thrown is,
+
+
+        // Make an AJAX call to the WordPress REST API to get site description
+        $.ajax({
+              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/post/'+postcounter_scratchx+'',
+              dataType: 'json',
+             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
+             //  jsonpCallback: 'response',
+              success: function(ret){
+                console.log(ret);
+                console.log(postcounter_scratchx);
                 callback(ret[0]);
               }
 
@@ -142,6 +165,7 @@
             ['R', 'Site Description', 'get_description'],
             ['R', 'Posts', 'get_posts'],
             ['R', 'Post ID', 'get_post_ids', 1],
+            ['R', 'Next Post', 'get_post_next_post'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
