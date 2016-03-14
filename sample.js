@@ -33,7 +33,7 @@
              jsonp:false, // make it to false, to use your function on JSON RESPONSE
               jsonpCallback: 'response',
               success: function(ret){
-                console.log('ok');
+                console.log(ret);
               }
         });
     };
