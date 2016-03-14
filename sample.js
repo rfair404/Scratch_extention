@@ -13,13 +13,12 @@
     // site info callback
     ext.getSiteInfo = function() {
         // Make an AJAX call to the WordPress REST API
-        $.ajax({
+        site = $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
               // dataType: 'jsonp',
               success: function( response ) {
-                // console.log( site_info );
-                  // Got the data - parse it and return the temperature
-                  site = response;
+                console.log( response );
+                // Got the data - parse it and return the temperature
               }
         });
         console.log(site);
