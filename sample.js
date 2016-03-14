@@ -30,6 +30,20 @@
         // return site;
     };
 
+            ext.get_temp = function(location, callback) {
+                // Make an AJAX call to the Open Weather Maps API
+                $.ajax({
+                    url: 'http://rest-api-demo.q21.co/wp-json/',
+                    dataType: 'jsonp',
+                    success: function( weather_data ) {
+                        console.log(weather_data);
+                        // Got the data - parse it and return the temperature
+                        temperature = weather_data['main']['temp'];
+                        callback(temperature);
+                    }
+                });
+            };
+
 
 	ext.start = function() {
 		return true;
@@ -43,7 +57,7 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            ['R', 'Get Site Title', 'getSiteInfo'],
+            ['R', 'Get Site Title', 'get_temp'],
             // ['r', 'Get Site Info', 'getSiteInfo'],
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
