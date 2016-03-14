@@ -1,6 +1,6 @@
 (function(ext) {
 
-    var postcounter_scratchx = 0;
+    var postcounter_scratchx = 1;
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
