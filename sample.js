@@ -16,14 +16,14 @@
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
               // dataType: 'jsonp',
-              success: function( site_info ) {
+              success: function( response ) {
                 // console.log( site_info );
                   // Got the data - parse it and return the temperature
-                  title = site_info['name'];
+                  site = response;
               }
         });
-        console.log(title);
-        return title;
+        console.log(site);
+        return site;
     };
 
 
@@ -40,6 +40,7 @@
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
             ['R', 'Get Site Title', 'getSiteInfo'],
+            ['r', 'Get Site Info', 'getSiteInfo'],
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
         ],
