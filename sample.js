@@ -79,11 +79,14 @@
         });
     };
 
-         ext.get_post_id = function(post_id, callback) {
+         ext.get_post_ids = function(callback, scratch_id) {
+            console.log(scratch_id);
+            //find out what the first thing thrown is,
+
 
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/post/'+post_id,
+              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
