@@ -61,8 +61,10 @@
     };
 
 
-     ext.access_scratch_dataset = function(data) {
+     ext.access_scratch_dataset = function(data, callback) {
         console.log(data);
+        console.log(callback);
+
     };
 
 
