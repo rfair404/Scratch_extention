@@ -29,11 +29,11 @@
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
-              dataType: 'json',
-              success: function( weather_data ) {
-                  // Got the data - parse it and return the temperature
-                  temperature = weather_data['responseTEXT'];
-                  callback(temperature);
+              dataType: 'jsonp',
+             jsonp:false, // make it to false, to use your function on JSON RESPONSE
+              jsonpCallback: 'response',
+              success: function(ret){
+                console.log('ok');
               }
         });
     };
