@@ -10,32 +10,30 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    // For information on writing Scratch extensions, see the ScratchX wiki:
-    // https://github.com/LLK/scratchx/wiki#writing-extensions-for-scratchx
-    ext.calendarSchedule = function() {
-        // code to do something goes here
+    // site info callback
+    ext.getSiteInfo = function() {
+        return 'this at least works';
     };
-	
+
 
 	ext.start = function() {
 		return true;
 	};
-	
+
 	ext.say = function() {
-	
+
 	};
 
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-		    ['h', 'Toby start', 'start'],
-            [' ', 'Calendar Schedule', 'calendarSchedule'],
-			['', 'Toby Say %n ', 'say', 'Hello, I am Toby']
-
+            ['h', 'WordPress REST API Site ', 'start'],
+            [' ', 'Get Site Info', 'getSiteInfo'],
+            ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
 
     // Register the extension
-    ScratchExtensions.register('TobyCode', descriptor, ext);
+    ScratchExtensions.register('WORDPRESS-REST-API', descriptor, ext);
 })({});
