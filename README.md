@@ -1,3 +1,3 @@
 Adding to ScratchX
 
-use the url http://scratchx.org/?url=https://github.com/rfair404/Scratch_extention/blob/master/sampleExtension.js
+use the url http://scratchx.org/?url=http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX/sampleExtension.js
