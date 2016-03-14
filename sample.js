@@ -92,7 +92,7 @@
              //  jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret);
-                callback(ret.description);
+                callback(ret[0]);
               }
 
 
