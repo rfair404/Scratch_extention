@@ -81,7 +81,7 @@
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', 'Posts', 'get_posts'],
-            [' ', 'Access', 'access_scratch_dataset', ,
+            [' ', 'Access', 'access_scratch_dataset', ],
 
         ],
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
