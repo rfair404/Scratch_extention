@@ -11,11 +11,9 @@
     };
 
     // sample callback
-    ext.sample = function( unk, callback ) {
+    ext.sample = function() {
         console.log('writing');
-        console.log(unk);
-        console.log(callback);
-        callback( 'd' );
+        return 'd';
     };
 
     // site info callback
