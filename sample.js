@@ -19,7 +19,7 @@
               success: function( site_info ) {
                     console.log( site_info );
                   // Got the data - parse it and return the temperature
-                  title = site_info.responseJSON.name;
+                  title = site_info.name;
                   callback(title);
               }
         });
