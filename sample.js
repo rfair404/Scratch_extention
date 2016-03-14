@@ -10,19 +10,24 @@
         return {status: 2, msg: 'Ready'};
     };
 
+    // sample callback
+    ext.sample = function() {
+        return 'dooooo';
+    };
+
     // site info callback
     ext.getSiteInfo = function() {
         // Make an AJAX call to the WordPress REST API
-        site = $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/',
-              // dataType: 'jsonp',
-              success: function( response ) {
-                console.log( response );
-                // Got the data - parse it and return the temperature
-              }
-        });
-        console.log(site);
-        return site;
+        // site = $.ajax({
+        //       url: 'http://rest-api-demo.q21.co/wp-json/',
+        //       // dataType: 'jsonp',
+        //       success: function( response ) {
+        //         console.log( response );
+        //         // Got the data - parse it and return the temperature
+        //       }
+        // });
+        // console.log(site);
+        // return site;
     };
 
 
