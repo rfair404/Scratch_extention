@@ -32,7 +32,7 @@
               dataType: 'json',
               success: function( weather_data ) {
                   // Got the data - parse it and return the temperature
-                  temperature = weather_data.responseJSON.name;
+                  temperature = weather_data.responseJSON['name'];
                   callback(temperature);
               }
         });
