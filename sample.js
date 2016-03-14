@@ -20,9 +20,9 @@
                     console.log( site_info );
                   // Got the data - parse it and return the temperature
                   title = site_info.name;
-                  return title;
               }
         });
+        return title;
     };
 
 
