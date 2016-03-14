@@ -34,8 +34,8 @@
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
               dataType: 'json',
-             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
-             //  jsonpCallback: 'response',
+             jsonp:false, // make it to false, to use your function on JSON RESPONSE
+              jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret.name);
                 callback(ret.name);
