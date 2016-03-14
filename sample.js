@@ -34,7 +34,10 @@
               jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret.name);
-              }
+                name = ret.name;
+              },
+              callback(name),
+
         });
     };
 
