@@ -12,14 +12,14 @@
 
     // site info callback
     ext.getSiteInfo = function() {
-        // Make an AJAX call to the Open Weather Maps API
+        // Make an AJAX call to the WordPress REST API
         $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/',
-              dataType: 'jsonp',
-              success: function( weather_data ) {
+              url: 'http://rest-api-demo.q21.co/wp-json/',
+              // dataType: 'jsonp',
+              success: function( site_info ) {
                   // Got the data - parse it and return the temperature
-                  temperature = weather_data['main']['temp'];
-                  callback(temperature);
+                  title = site_info['responseJSON']['name'];
+                  callback(title);
               }
         });
     };
@@ -36,8 +36,8 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            // ['h', 'WordPress REST API Site ', 'start'],
-            ['R', 'Connect to demo site via REST API', 'getSiteInfo'],
+            ['h', 'Enable WordPress REST API', 'start'],
+            ['R', 'Get Site Title', 'getSiteInfo'],
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
         ],
