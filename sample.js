@@ -1,4 +1,7 @@
 (function(ext) {
+
+    var postcounter_scratchx = 0;
+
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
     };
@@ -63,7 +66,7 @@
 
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/post/1',
+              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
@@ -75,6 +78,25 @@
 
         });
     };
+
+         ext.get_post_id = function(post_id, callback) {
+
+        // Make an AJAX call to the WordPress REST API to get site description
+        $.ajax({
+              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/post/'+post_id,
+              dataType: 'json',
+             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
+             //  jsonpCallback: 'response',
+              success: function(ret){
+                console.log(ret);
+                callback(ret.description);
+              }
+
+
+        });
+        postcounter_scratchx = postcounter_scratchx + 1;
+    };
+
 
          ext.get_user = function(callback) {
 
@@ -116,6 +138,7 @@
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', 'Posts', 'get_posts'],
+            ['R', 'Post ID', 'get_post_id', 1],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
