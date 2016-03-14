@@ -10,12 +10,6 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    // sample callback
-    ext.sample = function() {
-        console.log('writing');
-        return 'd';
-    };
-
     // site info callback
     ext.getSiteInfo = function() {
         // Make an AJAX call to the WordPress REST API
@@ -31,20 +25,18 @@
         // return site;
     };
 
-            ext.get_temp = function(location, callback) {
-                // Make an AJAX call to the Open Weather Maps API
-                $.ajax({
-                    url: 'http://rest-api-demo.q21.co/wp-json/',
-                    // dataType: 'jsonp',
-                    success: function( site_info ) {
-                        console.log(location);
-                        console.log(site_info);
-                        // // Got the data - parse it and return the temperature
-                        // site_name = site_info['name'];
-                        // callback(site_name);
-                    }
-                });
-            };
+ ext.get_temp = function(location, callback) {
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
+    };
 
 
 	ext.start = function() {
@@ -59,7 +51,7 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            ['R', 'Get Site Title', 'sample', 'Atlanta, GA']
+            ['R', 'Get Site Title', 'get_temp', 'Atlanta, GA']
         ],
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
