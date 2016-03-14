@@ -35,11 +35,11 @@
                 $.ajax({
                     url: 'http://rest-api-demo.q21.co/wp-json/',
                     // dataType: 'jsonp',
-                    success: function( weather_data ) {
-                        console.log(weather_data);
+                    success: function( site_info ) {
+                        console.log(site_info);
                         // Got the data - parse it and return the temperature
-                        temperature = weather_data['name'];
-                        callback(temperature);
+                        site_name = site_info['name'];
+                        callback(site_name);
                     }
                 });
             };
