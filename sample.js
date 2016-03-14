@@ -38,7 +38,7 @@
               jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret.name);
-                callback(ret.name);
+                return(ret.name);
               }
 
 
