@@ -11,8 +11,8 @@
     };
 
     // sample callback
-    ext.sample = function() {
-        return 'dooooo';
+    ext.sample = function( unk, callback ) {
+        callback( 'dooooo' );
     };
 
     // site info callback
