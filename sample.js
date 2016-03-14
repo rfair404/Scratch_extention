@@ -45,7 +45,6 @@
     };
 
      ext.get_description = function(callback) {
-        console.log(foo);
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
@@ -81,6 +80,7 @@
      ext.access_scratch_dataset = function(data, callback) {
         console.log(data);
         console.log(callback);
+        console.log(getVar(foo));
 
     };
 
@@ -100,7 +100,7 @@
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', 'Posts', 'get_posts'],
-            [' ', 'Access', 'access_scratch_dataset'],
+            // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
