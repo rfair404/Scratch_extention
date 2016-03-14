@@ -40,7 +40,7 @@
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
             ['R', 'Get Site Title', 'getSiteInfo'],
-            ['r', 'Get Site Info', 'getSiteInfo'],
+            // ['r', 'Get Site Info', 'getSiteInfo'],
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
         ],
