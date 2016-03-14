@@ -12,7 +12,7 @@
 
     // sample callback
     ext.sample = function( unk, callback ) {
-        callback( 'dooooo' );
+        callback( unk );
     };
 
     // site info callback
