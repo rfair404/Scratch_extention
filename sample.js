@@ -12,7 +12,16 @@
 
     // site info callback
     ext.getSiteInfo = function() {
-        return 'this at least works';
+        // Make an AJAX call to the Open Weather Maps API
+        $.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
+              }
+        });
     };
 
 
@@ -27,9 +36,10 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['h', 'WordPress REST API Site ', 'start'],
-            [' ', 'Get Site Info', 'getSiteInfo'],
-            ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
+            // ['h', 'WordPress REST API Site ', 'start'],
+            ['R', 'Connect to demo site via REST API', 'getSiteInfo'],
+            // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
+            // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
         ],
         url: 'http://' // Link to extension documentation, homepage, etc.
     };
