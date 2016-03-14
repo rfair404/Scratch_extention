@@ -29,7 +29,7 @@
         return value;
     };
 
- ext.get_title = function(callback, foo) {
+ ext.get_title = function(callback) {
         // Make an AJAX call to the WordPress REST API for the site title
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
@@ -44,7 +44,7 @@
         });
     };
 
-     ext.get_description = function(callback, foo) {
+     ext.get_description = function(callback) {
         console.log(foo);
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
@@ -61,6 +61,10 @@
     };
 
 
+     ext.access_scratch_dataset = function(data) {
+        console.log(data);
+    };
+
 
 	ext.start = function() {
 		return true;
@@ -74,8 +78,10 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            ['R', 'Site Title', 'get_title', 'foo1'],
-            ['R', 'Site Description', 'get_description', 'foo2']
+            ['R', 'Site Title', 'get_title'],
+            ['R', 'Site Description', 'get_description'],
+            ['R', 'Posts', 'get_posts'],
+            [' ', 'Access', 'access_scratch_dataset', ,
 
         ],
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
