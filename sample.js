@@ -32,11 +32,12 @@
               dataType: 'json',
              jsonp:false, // make it to false, to use your function on JSON RESPONSE
               jsonpCallback: 'response',
+
               success: function(ret){
                 console.log(ret.name);
-                name = ret.name;
-              },
-              callback(name),
+                callback(ret.name);
+              }
+
 
         });
     };
