@@ -36,6 +36,7 @@
                     url: 'http://rest-api-demo.q21.co/wp-json/',
                     // dataType: 'jsonp',
                     success: function( site_info ) {
+                        console.log(location);
                         console.log(site_info);
                         // Got the data - parse it and return the temperature
                         site_name = site_info['name'];
@@ -57,7 +58,7 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            ['R', 'Get Site Title', 'get_temp'],
+            ['R', 'Get Site Title', 'get_temp', 'Atlanta, GA'],
             // ['r', 'Get Site Info', 'getSiteInfo'],
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
             // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
