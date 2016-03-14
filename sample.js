@@ -29,7 +29,7 @@
         return value;
     };
 
- ext.get_temp = function(location, callback) {
+ ext.get_temp = function(callback) {
         // Make an AJAX call to the WordPress REST API
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
