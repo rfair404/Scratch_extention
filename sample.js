@@ -25,6 +25,10 @@
         // return site;
     };
 
+    ext.callback = function( value ){
+        return value;
+    };
+
  ext.get_temp = function(location, callback) {
         // Make an AJAX call to the WordPress REST API
         $.ajax({
@@ -41,9 +45,6 @@
         });
     };
 
-    ext.callback = function( value ){
-        return value;
-    };
 
 
 	ext.start = function() {
