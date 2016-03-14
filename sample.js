@@ -38,9 +38,9 @@
                     success: function( site_info ) {
                         console.log(location);
                         console.log(site_info);
-                        // Got the data - parse it and return the temperature
-                        site_name = site_info['name'];
-                        callback(site_name);
+                        // // Got the data - parse it and return the temperature
+                        // site_name = site_info['name'];
+                        // callback(site_name);
                     }
                 });
             };
@@ -58,12 +58,9 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            ['R', 'Get Site Title', 'get_temp', 'Atlanta, GA'],
-            // ['r', 'Get Site Info', 'getSiteInfo'],
-            // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
-            // ['', 'Russell Say %n ', 'say', 'Hello, I am Toby']
+            ['R', 'Get Site Title', 'sample', 'Atlanta, GA']
         ],
-        url: 'http://' // Link to extension documentation, homepage, etc.
+        url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
 
     // Register the extension
