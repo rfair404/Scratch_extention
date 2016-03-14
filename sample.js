@@ -108,7 +108,7 @@
 
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/post/'+postcounter_scratchx+'',
+              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/'+postcounter_scratchx+'',
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
