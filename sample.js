@@ -12,6 +12,8 @@
 
     // sample callback
     ext.sample = function( unk, callback ) {
+        console.log('writing');
+        console.log(unk);
         callback( unk );
     };
 
