@@ -50,6 +50,19 @@
         });
     };
 
+    ext.test_new_url = function(callback, ns){
+       $.ajax({
+              url: api_base+'/'+ns,
+              dataType: 'json',
+             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
+             //  jsonpCallback: 'response',
+              success: function(ret){
+                alert(ret);
+                callback(ret);
+              }
+        });
+    };
+
          ext.get_next_post_id = function(callback) {
           console.log('next posts please');
             // Make an AJAX call to the WordPress REST API to get site description
@@ -120,6 +133,13 @@
       console.log('API base is: '+value);
     }
 
+    ext.set_api_namespace = function(ns, value) {
+      // console.log(post);
+      // console.log(value);
+      api_base = value;
+      console.log('namespace is: '+value);
+    }
+
     
 
          ext.get_admin_user = function(callback) {
@@ -158,10 +178,13 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            [' ', 'Set %m.api_base to %s', 'api_base', 'api_base', 'http://'],
+            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://'],
+            [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
+
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', '!ALL POST', 'get_posts'],
+            ['R', 'test new url', 'test_new_url'],
             ['R', 'Admin User', 'get_admin_user'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
