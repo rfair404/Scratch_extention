@@ -86,7 +86,7 @@
         });
         // postcounter_scratchx = postcounter_scratchx + 1;
     };
-    ext.get_post_by_id = function(callback, post_id) {
+    ext.get_post_by_id = function(callback) {
           //handle pagination somehow???
           console.log(post_id);
         // Make an AJAX call to the WordPress REST API to get a collection of post ids
