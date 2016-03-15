@@ -91,11 +91,11 @@
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              // jsonpCallback: 'response',
               success: function(ret){
-                $.each(ret, function(i, item){
-                  console.log(i);
-                  // console.log(item.id);
-                  // post_ids.add(item.id);
-                }); 
+                // $.each(ret, function(i, item){
+                //   console.log(i);
+                //   // console.log(item.id);
+                //   // post_ids.add(item.id);
+                // }); 
 
                 callback(post_ids);
               }
