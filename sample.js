@@ -3,6 +3,7 @@
     var post_start = 1;
     var post_next = 1;
     var post_previous = 1;
+    var api_base =  '';
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -112,7 +113,16 @@
       console.log('new post value is '+post_start);
     }
 
-         ext.get_user = function(callback) {
+    ext.set_api_base = function(api_base, value) {
+      // console.log(post);
+      // console.log(value);
+      api_base = value;
+      console.log('API base is: '+value);
+    }
+
+    
+
+         ext.get_admin_user = function(callback) {
 
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
@@ -148,9 +158,11 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
+            [' ', 'Set %m.api_endpoint to %n', 'set_api_endpoint', 'json_url', 'http://'],
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', '!ALL POST', 'get_posts'],
+            ['R', 'Admin User', 'get_admin_user'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post_id', 'post_now'],
@@ -160,6 +172,7 @@
         ],
         menus : {
           post_pagination: ['post_next', 'post_previous'],
+          api_endpoint: ['hostname', 'namespace'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
