@@ -93,11 +93,14 @@
              // jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret);
-                ret.each(ret, function(i, item){
-                  console.log(item);
-                //   // console.log(item.id);
-                //   // post_ids.add(item.id);
-                }); 
+                 for(var i=0;i<ret.length;i++){
+                  var obj = ret[i];
+                  console.log(obj);
+                  for(var key in obj){
+                      var attrName = key;
+                      var attrValue = obj[key];
+                  }
+                }
 
                 callback(post_ids);
               }
