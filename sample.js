@@ -79,21 +79,24 @@
         });
     };
 
-         ext.get_post_ids = function(callback, scratch_id) {
-            console.log(scratch_id);
-            //find out what the first thing thrown is,
+         ext.get_post_ids = function(callback) {
+          //handle pagination somehow???
 
+          //setup post ids array
+          post_ids = (array);
 
-        // Make an AJAX call to the WordPress REST API to get site description
+        // Make an AJAX call to the WordPress REST API to get a collection of post ids
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
               success: function(ret){
-                console.log(ret);
-                console.log(postcounter_scratchx);
-                callback(ret[0]);
+                $.each(ret, function(i, item) {
+                  console.log(item.id);
+                  post_ids.add(item.id);
+                });​
+                callback(post_ids);
               }
 
 
