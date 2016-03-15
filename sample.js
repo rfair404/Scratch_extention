@@ -92,7 +92,6 @@
                 var post_ids = [];
 
                 for (var i = ret.length - 1; i >= 0; i--) {
-                  console.log(ret[i]['id']);
                   post_ids.push(ret[i]['id']);
                 };
               callback(post_ids);
@@ -101,8 +100,10 @@
         // postcounter_scratchx = postcounter_scratchx + 1;
     };
 
-    ext.set_post = function(callback) {
-      console.log('setting it now');
+    ext.set_post = function(post, value) {
+      console.log(post);
+
+      console.log(value);
     }
 
      ext.get_post_next_post = function(callback, scratch_id) {
