@@ -93,7 +93,7 @@
              // jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret);
-                $.each(ret, function(i, item){
+                ret.each(ret, function(i, item){
                   console.log(item);
                 //   // console.log(item.id);
                 //   // post_ids.add(item.id);
