@@ -95,7 +95,8 @@
                   console.log(i);
                   // console.log(item.id);
                   // post_ids.add(item.id);
-                });
+                }); 
+
                 callback(post_ids);
               }
 
