@@ -71,7 +71,6 @@
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
               success: function(ret){
-                console.log(ret);
                 callback(ret.description);
               }
 
@@ -90,10 +89,10 @@
               url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
-             //  jsonpCallback: 'response',
+             // jsonpCallback: 'response',
               success: function(ret){
                 $.each(ret, function(i, item) {
-                  console.log(item.id);
+                  // console.log(item.id);
                   post_ids.add(item.id);
                 });​
                 callback(post_ids);
@@ -116,8 +115,6 @@
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
               success: function(ret){
-                console.log(ret);
-                console.log(postcounter_scratchx);
                 callback(ret[0]);
               }
 
