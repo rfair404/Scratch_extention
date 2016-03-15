@@ -82,7 +82,7 @@
          ext.get_post_ids = function(callback, scratch_id) {
             console.log(scratch_id);
             //find out what the first thing thrown is,
-
+            post_ids = [];
 
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
@@ -91,14 +91,17 @@
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
               success: function(ret){
-                console.log(ret);
+                ret.each(function(counter){
+                    // post_ids[] = this
+                    console.log(this.id);
+                });
                 console.log(postcounter_scratchx);
                 callback(ret[0]);
               }
 
 
         });
-        // postcounter_scratchx = postcounter_scratchx + 1;
+        postcounter_scratchx = postcounter_scratchx + 1;
     };
 
      ext.get_post_next_post = function(callback, scratch_id) {
