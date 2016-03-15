@@ -50,10 +50,10 @@
     };
 
          ext.get_next_posts = function(callback) {
-
+          console.log('next posts please');
             // Make an AJAX call to the WordPress REST API to get site description
             $.ajax({
-                  url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start,
+                  url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/?per_page=1&page='+post_start+'',
                   dataType: 'json',
                  // jsonp:false, // make it to false, to use your function on JSON RESPONSE
                  //  jsonpCallback: 'response',
@@ -61,8 +61,6 @@
                     console.log(ret);
                     callback('1');
                   }
-
-
             });
             post_start++;
         };
