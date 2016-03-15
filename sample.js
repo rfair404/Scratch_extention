@@ -58,8 +58,8 @@
                  // jsonp:false, // make it to false, to use your function on JSON RESPONSE
                  //  jsonpCallback: 'response',
                   success: function(ret){
-                    console.log(ret[0]['id']);
-                    callback(ret[0]['id']);
+                    console.log(ret['id']);
+                    callback(ret['id']);
                   }
             });
             post_start++;
@@ -109,7 +109,7 @@
       // console.log(post);
       // console.log(value);
       post_now = value;
-      console.log('new post value is ]'+post_now);
+      console.log('new post value is '+post_now);
     }
 
          ext.get_user = function(callback) {
