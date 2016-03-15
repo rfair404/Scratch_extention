@@ -176,9 +176,9 @@
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
-        menus : [
+        menus : {
           outAPins: ['post_next', 'post_previous', 'post_now'],
-        ],
+        },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
 
