@@ -58,8 +58,8 @@
                  // jsonp:false, // make it to false, to use your function on JSON RESPONSE
                  //  jsonpCallback: 'response',
                   success: function(ret){
-                    console.log(ret['id']);
-                    callback(ret['id']);
+                    console.log(ret);
+                    callback(ret[0]['id']);
                   }
             });
             post_start++;
