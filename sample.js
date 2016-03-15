@@ -105,6 +105,10 @@
         // postcounter_scratchx = postcounter_scratchx + 1;
     };
 
+    ext.set_post = function(callback) {
+      console.log('setting it now');
+    }
+
      ext.get_post_next_post = function(callback, scratch_id) {
             console.log(scratch_id);
             //find out what the first thing thrown is,
@@ -168,8 +172,12 @@
             ['R', 'Posts', 'get_posts'],
             ['R', 'Post ID', 'get_post_ids', 1],
             ['R', 'Next Post', 'get_post_next_post'],
+            [' ', 'Set %m.outAPins to %n', 'set_post', 'd5', '255'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
+        ],
+        menus : [
+          outAPins: ['post_next', 'post_previous', 'post_now'],
         ],
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
