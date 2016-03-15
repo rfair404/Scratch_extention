@@ -59,7 +59,7 @@
                  //  jsonpCallback: 'response',
                   success: function(ret){
                     console.log(ret);
-                    callback('1');
+                    callback(post_start);
                   }
             });
             post_start++;
@@ -91,27 +91,6 @@
       console.log(post);
       console.log(value);
     }
-
-     ext.get_post_next_post = function(callback, scratch_id) {
-            console.log(scratch_id);
-            //find out what the first thing thrown is,
-
-
-        // Make an AJAX call to the WordPress REST API to get site description
-        $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/'+postcounter_scratchx+'',
-              dataType: 'json',
-             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
-             //  jsonpCallback: 'response',
-              success: function(ret){
-                callback(ret[0]);
-              }
-
-
-        });
-        postcounter_scratchx = postcounter_scratchx + 1;
-    };
-
 
          ext.get_user = function(callback) {
 
