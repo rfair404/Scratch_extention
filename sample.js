@@ -88,7 +88,7 @@
     };
     ext.get_post_by_id = function(callback, post_id) {
           //handle pagination somehow???
-
+          console.log(post_id);
         // Make an AJAX call to the WordPress REST API to get a collection of post ids
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/'+post_id+'',
@@ -97,8 +97,8 @@
              // jsonpCallback: 'response',
 
               success: function(ret){
-              console.log(ret);
-              callback(post_ids);
+                console.log(ret);
+                callback('yepp');
               }
         });
         // postcounter_scratchx = postcounter_scratchx + 1;
@@ -150,7 +150,7 @@
             ['R', 'Site Description', 'get_description'],
             ['R', '!ALL POST', 'get_posts'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
-            ['R', 'Get Post IDs', 'get_post_by_id', 'post_now', '1'],
+            ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post', 'post_now'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
