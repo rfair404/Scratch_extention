@@ -53,7 +53,7 @@
           console.log('next posts please');
             // Make an AJAX call to the WordPress REST API to get site description
             $.ajax({
-                  url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/?per_page=1&page='+post_start+'',
+                  url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
                   dataType: 'json',
                  // jsonp:false, // make it to false, to use your function on JSON RESPONSE
                  //  jsonpCallback: 'response',
@@ -151,9 +151,9 @@
             ['h', 'Enable WordPress REST API', 'start'],
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
-            ['R', 'NEXT POST', 'get_posts'],
+            ['R', '!ALL POST', 'get_posts'],
             ['R', 'Post ID', 'get_post_ids', 1],
-            ['R', 'Next Post', 'get_next_post'],
+            ['R', 'Next Post', 'get_next_post', 'post_now'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
