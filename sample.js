@@ -108,8 +108,8 @@
     ext.set_post = function(post, value) {
       // console.log(post);
       // console.log(value);
-      post_now = value;
-      console.log('new post value is '+post_now);
+      post_start = value;
+      console.log('new post value is '+post_start);
     }
 
          ext.get_user = function(callback) {
@@ -154,7 +154,7 @@
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post_id', 'post_now'],
-            [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
+            [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
