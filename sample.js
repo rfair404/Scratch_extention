@@ -83,7 +83,7 @@
           //handle pagination somehow???
 
           //setup post ids array
-          post_ids = (array);
+
 
         // Make an AJAX call to the WordPress REST API to get a collection of post ids
         $.ajax({
