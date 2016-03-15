@@ -79,6 +79,7 @@
     };
 
          ext.get_post_ids = function(callback) {
+          console.log('getting post ids');
           //handle pagination somehow???
 
           //setup post ids array
@@ -91,6 +92,7 @@
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              // jsonpCallback: 'response',
               success: function(ret){
+                console.log(ret);
                 $.each(ret, function(i, item){
                   console.log(item);
                 //   // console.log(item.id);
