@@ -86,10 +86,28 @@
         });
         // postcounter_scratchx = postcounter_scratchx + 1;
     };
+    ext.get_post_by_id = function(callback, post_id) {
+          //handle pagination somehow???
+
+        // Make an AJAX call to the WordPress REST API to get a collection of post ids
+        $.ajax({
+              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/'+post_id+'',
+              dataType: 'json',
+             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
+             // jsonpCallback: 'response',
+
+              success: function(ret){
+              console.log(ret);
+              callback(post_ids);
+              }
+        });
+        // postcounter_scratchx = postcounter_scratchx + 1;
+    };
+
 
     ext.set_post = function(post, value) {
-      console.log(post);
-      console.log(value);
+      // console.log(post);
+      // console.log(value);
     }
 
          ext.get_user = function(callback) {
@@ -109,9 +127,9 @@
     };
 
      ext.access_scratch_dataset = function(data, callback) {
-        console.log(data);
-        console.log(callback);
-        console.log(getVar(foo));
+        // console.log(data);
+        // console.log(callback);
+        // console.log(getVar(foo));
 
     };
 
@@ -131,7 +149,8 @@
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', '!ALL POST', 'get_posts'],
-            ['R', 'Post ID', 'get_post_ids', 1],
+            ['R', 'Get Post IDs', 'get_post_ids', 1],
+            ['R', 'Get Post IDs', 'get_post_by_id', 'post_now', '1'],
             ['R', 'Next Post', 'get_next_post', 'post_now'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
