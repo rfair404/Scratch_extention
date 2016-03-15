@@ -89,7 +89,7 @@
              // jsonpCallback: 'response',
 
               success: function(ret){
-                var post_ids = {};
+                var post_ids = [];
 
                 for (var i = ret.length - 1; i >= 0; i--) {
                   console.log(ret[i]['id']);
