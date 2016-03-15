@@ -79,11 +79,7 @@
     };
 
          ext.get_post_ids = function(callback) {
-          console.log('getting post ids');
           //handle pagination somehow???
-
-          //setup post ids array
-
 
         // Make an AJAX call to the WordPress REST API to get a collection of post ids
         $.ajax({
@@ -93,7 +89,7 @@
              // jsonpCallback: 'response',
 
               success: function(ret){
-                var post_ids = [];
+                var post_ids = {};
 
                 for (var i = ret.length - 1; i >= 0; i--) {
                   console.log(ret[i]['id']);
@@ -139,7 +135,6 @@
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              //  jsonpCallback: 'response',
               success: function(ret){
-                console.log(ret);
                 callback(ret.description);
               }
 
@@ -172,12 +167,12 @@
             ['R', 'Posts', 'get_posts'],
             ['R', 'Post ID', 'get_post_ids', 1],
             ['R', 'Next Post', 'get_post_next_post'],
-            [' ', 'Set %m.outAPins to %n', 'set_post', 'd5', '255'],
+            [' ', 'Set %m.outAPins to %n', 'set_post', 'post_now', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
         menus : {
-          outAPins: ['post_next', 'post_previous', 'post_now'],
+          outAPins: ['post_next', 'post_previous'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
