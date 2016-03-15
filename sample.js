@@ -49,7 +49,7 @@
         });
     };
 
-         ext.get_next_post = function(callback) {
+         ext.get_next_post_id = function(callback) {
           console.log('next posts please');
             // Make an AJAX call to the WordPress REST API to get site description
             $.ajax({
@@ -58,8 +58,8 @@
                  // jsonp:false, // make it to false, to use your function on JSON RESPONSE
                  //  jsonpCallback: 'response',
                   success: function(ret){
-                    console.log(ret['id']);
-                    callback(post_start);
+                    console.log(ret[0]['id']);
+                    callback(ret[0]['id']);
                   }
             });
             post_start++;
@@ -153,7 +153,7 @@
             ['R', '!ALL POST', 'get_posts'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
-            ['R', 'Next Post', 'get_next_post', 'post_now'],
+            ['R', 'Next Post', 'get_next_post_id', 'post_now'],
             [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
