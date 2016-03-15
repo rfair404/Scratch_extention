@@ -93,6 +93,9 @@
              // jsonpCallback: 'response',
               success: function(ret){
                 console.log(ret);
+                for (var i = ret.length - 1; i >= 0; i--) {
+                  console.log(ret[i]);
+                };
               }
 
 
