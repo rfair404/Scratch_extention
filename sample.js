@@ -49,7 +49,7 @@
         });
     };
 
-         ext.get_next_posts = function(callback) {
+         ext.get_next_post = function(callback) {
           console.log('next posts please');
             // Make an AJAX call to the WordPress REST API to get site description
             $.ajax({
