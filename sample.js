@@ -1,6 +1,8 @@
 (function(ext) {
 
-    var postcounter_scratchx = 1;
+    var post_start = 1;
+    var post_next = 1;
+    var post_previous = 1;
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -13,39 +15,24 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    // site info callback
-    ext.getSiteInfo = function() {
-        // Make an AJAX call to the WordPress REST API
-        // site = $.ajax({
-        //       url: 'http://rest-api-demo.q21.co/wp-json/',
-        //       // dataType: 'jsonp',
-        //       success: function( response ) {
-        //         console.log( response );
-        //         // Got the data - parse it and return the temperature
-        //       }
-        // });
-        // console.log(site);
-        // return site;
-    };
-
     ext.callback = function( value ){
         return value;
     };
 
- ext.get_title = function(callback) {
-        // Make an AJAX call to the WordPress REST API for the site title
-        $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/',
-              dataType: 'json',
-             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
-             //  jsonpCallback: 'response',
-              success: function(ret){
-                callback(ret.name);
-              }
+   ext.get_title = function(callback) {
+          // Make an AJAX call to the WordPress REST API for the site title
+          $.ajax({
+                url: 'http://rest-api-demo.q21.co/wp-json/',
+                dataType: 'json',
+               // jsonp:false, // make it to false, to use your function on JSON RESPONSE
+               //  jsonpCallback: 'response',
+                success: function(ret){
+                  callback(ret.name);
+                }
 
 
-        });
-    };
+          });
+      };
 
      ext.get_description = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
@@ -62,21 +49,23 @@
         });
     };
 
-         ext.get_posts = function(callback) {
+         ext.get_next_posts = function(callback) {
 
-        // Make an AJAX call to the WordPress REST API to get site description
-        $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
-              dataType: 'json',
-             // jsonp:false, // make it to false, to use your function on JSON RESPONSE
-             //  jsonpCallback: 'response',
-              success: function(ret){
-                callback(ret.description);
-              }
+            // Make an AJAX call to the WordPress REST API to get site description
+            $.ajax({
+                  url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start,
+                  dataType: 'json',
+                 // jsonp:false, // make it to false, to use your function on JSON RESPONSE
+                 //  jsonpCallback: 'response',
+                  success: function(ret){
+                    console.log(ret);
+                    callback('1');
+                  }
 
 
-        });
-    };
+            });
+            post_start++;
+        };
 
          ext.get_post_ids = function(callback) {
           //handle pagination somehow???
@@ -102,7 +91,6 @@
 
     ext.set_post = function(post, value) {
       console.log(post);
-
       console.log(value);
     }
 
@@ -165,15 +153,16 @@
             ['h', 'Enable WordPress REST API', 'start'],
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
-            ['R', 'Posts', 'get_posts'],
+            ['R', 'NEXT POST', 'get_posts'],
             ['R', 'Post ID', 'get_post_ids', 1],
-            ['R', 'Next Post', 'get_post_next_post'],
-            [' ', 'Set %m.outAPins to %n', 'set_post', 'post_now', '1'],
+            ['R', 'Next Post', 'get_next_post'],
+            [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
+            [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_now', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
         menus : {
-          outAPins: ['post_next', 'post_previous'],
+          post_pagination: ['post_next', 'post_previous'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
