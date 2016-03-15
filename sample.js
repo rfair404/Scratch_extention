@@ -91,7 +91,7 @@
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              // jsonpCallback: 'response',
-             var post_ids = [];
+             post_ids = [];
 
               success: function(ret){
                 console.log(ret);
@@ -99,10 +99,8 @@
                   console.log(ret[i]);
                   post_ids.push(ret[i]);
                 };
-              }
               callback(post_ids);
-
-
+              }
         });
         // postcounter_scratchx = postcounter_scratchx + 1;
     };
