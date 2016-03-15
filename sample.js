@@ -158,7 +158,7 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            [' ', 'Set %m.api_endpoint to %n', 'set_api_endpoint', 'json_url', 'http://'],
+            [' ', 'Set %m.api_base to %s', 'api_base', 'api_base', 'http://'],
             ['R', 'Site Title', 'get_title'],
             ['R', 'Site Description', 'get_description'],
             ['R', '!ALL POST', 'get_posts'],
@@ -172,7 +172,7 @@
         ],
         menus : {
           post_pagination: ['post_next', 'post_previous'],
-          api_endpoint: ['hostname', 'namespace'],
+          api_base: ['hostname', 'namespace'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' // Link to extension documentation, homepage, etc.
     };
