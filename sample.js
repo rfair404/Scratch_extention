@@ -91,12 +91,16 @@
               dataType: 'json',
              // jsonp:false, // make it to false, to use your function on JSON RESPONSE
              // jsonpCallback: 'response',
+             var post_ids = [];
+
               success: function(ret){
                 console.log(ret);
                 for (var i = ret.length - 1; i >= 0; i--) {
                   console.log(ret[i]);
+                  post_ids.push(ret[i]);
                 };
               }
+              callback(post_ids);
 
 
         });
