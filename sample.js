@@ -22,11 +22,15 @@
         return value;
     };
 
-   ext.get_site_title = function(callback, api_base, api_namespace) {
+    ext.get_api_base = function() {
+      return api_base;
+    }
+
+    ext.get_site_title = function(callback, api_base, api_namespace) {
           // Make an AJAX call to the WordPress REST API for the site title
-          console.log(api_base);
+          console.log(get_api_base);
           $.ajax({
-                url: api_base,
+                url: get_api_base(),
                 dataType: 'json',
                 success: function(ret){
                   callback(ret.name);
