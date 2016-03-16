@@ -96,9 +96,9 @@
 
     ext.get_user = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
-        console.log(user_id);
+        console.log(this.current_user);
         $.ajax({
-              url: this.get_api_base() + this.get_api_namespace() + '/user/' + user_id,
+              url: this.get_api_base() + this.get_api_namespace() + '/user/' + current_user,
               dataType: 'json',
               success: function(ret){
                 console.log(ret);
@@ -169,8 +169,6 @@
             ['R', 'Site Description', 'get_site_description'],//new
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
-            
-
             ['R', 'User Name', 'get_user'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
