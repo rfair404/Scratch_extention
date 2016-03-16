@@ -22,9 +22,9 @@
         return value;
     };
 
-   ext.get_site_title = function(callback) {
+   ext.get_site_title = function(callback, api_base, api_namespace) {
           // Make an AJAX call to the WordPress REST API for the site title
-          console.log(ext.api_base);
+          console.log();
           $.ajax({
                 url: ext.api_base,
                 dataType: 'json',
@@ -142,7 +142,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://wp-rest-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
 
-            ['R', 'Site Title', 'get_site_title'],
+            ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],
             ['R', 'Site Description', 'get_site_description'],
             ['R', '!ALL POST', 'get_posts'],
             ['R', 'test new url', 'test_new_url'],
