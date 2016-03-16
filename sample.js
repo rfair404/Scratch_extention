@@ -27,7 +27,7 @@
     };
 
     ext.say = function() {
-
+        //idk what this do
     };
 
     ext.get_api_base = function() {
@@ -95,7 +95,10 @@
       return this.current_user;
     }
 
-    ext.get_user = function(callback) {
+    ext.get_user = function(foo, foo2, callback) {
+      console.log(foo);
+      console.log(foo2);
+
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
               url: this.get_api_base() + this.get_api_namespace() + '/users/' + this.get_current_user(),
@@ -165,11 +168,12 @@
             ['h', 'Enable WordPress REST API', 'start'],
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://rest-api-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
-            ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],//new
+            [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
+            ['R', 'Site Title', 'get_site_title'],//new
             ['R', 'Site Description', 'get_site_description'],//new
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
-            [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
-            ['R', 'User Name', 'get_user'],
+
+            //['R', 'User Name', 'get_user'],
             ['R', 'Get %m.user_id', 'get_user', 'user_id'],
 
             // ['R', 'Get Post IDs', 'get_post_ids', 1],
