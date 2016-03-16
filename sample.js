@@ -181,9 +181,9 @@
         });
     };
 
-    ext.access_scratch_dataset = function (data) }
+    ext.access_scratch_dataset = function (data) {
       console.log(data);
-    }
+    };
 
     //refactored to here
 
