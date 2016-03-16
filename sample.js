@@ -1,7 +1,7 @@
 (function(ext) {
     var current_user = 1;
     var current_post_id = 1;
-    var current_post_offset = 1;
+    var current_post_offset = 0;
     var api_base = '';
     var api_namespace = '';
     var api_endpoint = '';
@@ -154,7 +154,7 @@
           //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
           dataType: 'json',
           success: function(ret){
-            console.log(ret);
+            //console.log(ret);
             callback(ret[0]['id']);
           }
         });
@@ -208,7 +208,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             [' ', 'Set current_post to %n', 'set_current_post_id', '1'],
-            [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '1'],
+            [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '0'],
 
             ['R', 'Site Title', 'get_site_title'],//new
             ['R', 'Site Description', 'get_site_description'],//new
