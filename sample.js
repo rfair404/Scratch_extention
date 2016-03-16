@@ -154,7 +154,7 @@
           //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
           dataType: 'json',
           success: function(ret){
-            //console.log(ret);
+            console.log(ret);
             callback(ret[0]['id']);
           }
         });
