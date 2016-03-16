@@ -3,8 +3,8 @@
     var post_start = 1;
     var post_next = 1;
     var post_previous = 1;
-    var api_base =  '';
-    var api_namespace = '';
+    var api_base =  'nothing set';
+    var api_namespace = 'so far not working';
     var api_endpoint = '';
 
     // Cleanup function when the extension is unloaded
@@ -23,10 +23,21 @@
     };
 
     ext.get_api_base = function() {
-      return api_base;
+      return this.api_base;
+    }
+    
+    ext.set_api_base = function(api_base, value) {
+      ext.api_base = value;
+      console.log('API base is: '+value);
     }
 
-    ext.get_site_title = function(callback, api_base, api_namespace) {
+    ext.set_api_namespace = function(api_namespace, value) {
+      api_namespace = value;
+      console.log('namespace is: '+value);
+    }
+
+
+    ext.get_site_title = function(callback) {
           // Make an AJAX call to the WordPress REST API for the site title
           console.log('Getting site title');
           console.log('API base: '+api_base);
@@ -109,16 +120,6 @@
     ext.set_post = function(post, value) {
       post_start = value;
       console.log('New "next post" is '+post_start);
-    }
-
-    ext.set_api_base = function(api_base, value) {
-      api_base = value;
-      console.log('API base is: '+value);
-    }
-
-    ext.set_api_namespace = function(api_namespace, value) {
-      api_namespace = value;
-      console.log('namespace is: '+value);
     }
 
     ext.get_admin_user = function(callback) {
