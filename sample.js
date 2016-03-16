@@ -4,6 +4,8 @@
     var post_next = 1;
     var post_previous = 1;
     var api_base =  '';
+    var api_namespace = '';
+    var api_endpoint = '';
 
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {
@@ -20,22 +22,20 @@
         return value;
     };
 
-   ext.get_title = function(callback) {
+   ext.get_site_title = function(callback) {
           // Make an AJAX call to the WordPress REST API for the site title
           $.ajax({
-                url: 'http://rest-api-demo.q21.co/wp-json/',
+                url: api_base,
                 dataType: 'json',
                // jsonp:false, // make it to false, to use your function on JSON RESPONSE
                //  jsonpCallback: 'response',
                 success: function(ret){
                   callback(ret.name);
                 }
-
-
           });
       };
 
-     ext.get_description = function(callback) {
+     ext.get_site_description = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
               url: 'http://rest-api-demo.q21.co/wp-json/',
@@ -45,8 +45,6 @@
               success: function(ret){
                 callback(ret.description);
               }
-
-
         });
     };
 
@@ -136,7 +134,7 @@
     ext.set_api_namespace = function(ns, value) {
       // console.log(post);
       // console.log(value);
-      api_base = value;
+      api_namespace = value;
       console.log('namespace is: '+value);
     }
 
@@ -181,8 +179,8 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
 
-            ['R', 'Site Title', 'get_title'],
-            ['R', 'Site Description', 'get_description'],
+            ['R', 'Site Title', 'get_site_title'],
+            ['R', 'Site Description', 'get_site_description'],
             ['R', '!ALL POST', 'get_posts'],
             ['R', 'test new url', 'test_new_url'],
             ['R', 'Admin User', 'get_admin_user'],
