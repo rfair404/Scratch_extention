@@ -171,7 +171,7 @@
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             ['R', 'User Name', 'get_user'],
-            ['R', 'Get %m.user_id', 'get_user', 'user_name'],
+            ['R', 'Get %m.user_id', 'get_user', 'user_id'],
 
             // ['R', 'Get Post IDs', 'get_post_ids', 1],
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
