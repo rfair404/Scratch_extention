@@ -149,7 +149,7 @@
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
-            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://wp-rest-demo.q21.co/wp-json/'],
+            [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://rest-api-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
 
             ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],
