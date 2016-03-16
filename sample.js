@@ -166,7 +166,7 @@
 
       // Make an AJAX call to the WordPress REST API to get a collection of post ids
       $.ajax({
-        url: this.get_api_base() + this.get_api_namespace() + '/posts/,
+        url: this.get_api_base() + this.get_api_namespace() + '/posts/',
         //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
         dataType: 'json',
               success: function(ret){
