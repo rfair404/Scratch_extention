@@ -91,14 +91,15 @@
     }
 
     ext.get_current_user = function() {
+      // console.log(this.current_user);
       return this.current_user;
     }
 
-    ext.get_user = function(callback) {
+    ext.get_user = function(callback, chunk) {
+      console.log(chunk);
         // Make an AJAX call to the WordPress REST API to get site description
-        console.log(this.current_user);
         $.ajax({
-              url: this.get_api_base() + this.get_api_namespace() + '/user/' + this.get_current_user(),
+              url: this.get_api_base() + this.get_api_namespace() + '/users/' + this.get_current_user(),
               dataType: 'json',
               success: function(ret){
                 console.log(ret);
@@ -170,17 +171,19 @@
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             ['R', 'User Name', 'get_user'],
-            ['R', 'Get Post IDs', 'get_post_ids', 1],
-            ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
-            ['R', 'Next Post', 'get_next_post_id', 'post_now'],
-            [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
+            ['R', 'Get %m.user_id', 'get_user', 'user_name'],
+
+            // ['R', 'Get Post IDs', 'get_post_ids', 1],
+            // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
+            // ['R', 'Next Post', 'get_next_post_id', 'post_now'],
+            // [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
         ],
         menus : {
           post_pagination: ['post_next', 'post_previous'],
           api_base: ['api_base', 'api_namespace', 'api_endpoint'],
-          user_id: ['user_id'],
+          user_id: ['user_id', 'user_name'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' 
         // Link to extension documentation, homepage, etc.
