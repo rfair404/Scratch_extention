@@ -127,13 +127,13 @@
                 switch (post_data) {
                   case 'title': 
                     callback(ret[post_data]['rendered']);
-                    [break;]
+                    break;
                   case 'description';
                     callback(ret[post_data]['rendered']);
-                    [break;]
+                    break;
                   default:
                     callback(ret[post_data]);
-                    [break;]
+                    break;
                 }
               }
         });
