@@ -1,6 +1,7 @@
 (function(ext) {
     var current_user = 1;
     var current_post_id = 1;
+    var current_post_offset = 1;
     var api_base = '';
     var api_namespace = '';
     var api_endpoint = '';
@@ -107,7 +108,7 @@
     };
 
     ext.set_current_post_id = function(value) {
-      console.log('current post set to '+ value);
+      //console.log('current post set to '+ value);
       this.current_post_id = value;
     }
 
@@ -136,20 +137,31 @@
               }
         });
     };
-    //im here
 
-    // ext.get_next_post_id = function(callback) {
-    //     // Make an AJAX call to the WordPress REST API to get site description
-    //     $.ajax({
-    //       url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
-    //       dataType: 'json',
-    //       success: function(ret){
-    //         console.log(ret);
-    //         callback(ret[0]['id']);
-    //       }
-    //     });
-    //   post_start++;
-    // };
+    ext.set_current_post_offset = function(offset, value) {
+      console.log('offset set to '+value);
+      this.current_post_offset = value;
+    }
+
+    ext.get_current_post_offset = function() {
+      return this.current_post_offset;
+    }
+
+    ext.get_next_post_id = function(callback) {
+        // Make an AJAX call to the WordPress REST API to get site description
+        $.ajax({
+          url: this.get_api_base() + this.get_api_namespace() + '/posts/?per_page=1&page=' + this.get_current_post_offset(),
+          //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
+          dataType: 'json',
+          success: function(ret){
+            console.log(ret);
+            callback(ret[0]['id']);
+          }
+        });
+      post_start++;
+    };
+
+//now here
 
     // ext.get_post_ids = function(callback) {
     //   //handle pagination somehow???
@@ -196,6 +208,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             [' ', 'Set current_post to %n', 'set_current_post_id', '1'],
+            [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '1'],
 
             ['R', 'Site Title', 'get_site_title'],//new
             ['R', 'Site Description', 'get_site_description'],//new
@@ -205,7 +218,7 @@
 
             // ['R', 'Get Post IDs', 'get_post_ids', 1],
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
-            // ['R', 'Get Post', 'get_next_post_id', 'post_now'],
+            ['R', 'Next Post', 'get_next_post_id'],
             // [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
             // [' ', 'Access', 'access_scratch_dataset'],
 
