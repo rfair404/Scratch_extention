@@ -124,7 +124,17 @@
               dataType: 'json',
               success: function(ret){
                 // console.log(ret);
-                callback(ret[post_data]);
+                switch (post_data) {
+                  case 'title': 
+                    callback(ret[post_data]['rendered']);
+                    [break;]
+                  case 'description';
+                    callback(ret[post_data]['rendered']);
+                    [break;]
+                  default:
+                    callback(ret[post_data]);
+                    [break;]
+                }
               }
         });
     };
