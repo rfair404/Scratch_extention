@@ -1,8 +1,6 @@
 (function(ext) {
     var current_user = 1;
-    var post_start = 1;
-    var post_next = 1;
-    var post_previous = 1;
+    var current_post = 1;
     var api_base = '';
     var api_namespace = '';
     var api_endpoint = '';
@@ -108,6 +106,15 @@
         });
     };
 
+    ext.set_post_id = function(current_post, value) {
+      console.log('current post set to '+ value);
+      this.current_user = value;
+    }
+
+    ext.get_current_post = function() {
+      // console.log(this.current_post);
+      return this.current_post;
+    }
     //im here
 
     ext.get_next_post_id = function(callback) {
@@ -167,12 +174,12 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://rest-api-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
+            [' ', 'Set current_post to %n', 'set_post_id', 'current_post', '1'],
+
             ['R', 'Site Title', 'get_site_title'],//new
             ['R', 'Site Description', 'get_site_description'],//new
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
-
-            //['R', 'User Name', 'get_user'],
-            ['R', 'Get %m.user_id', 'get_user', 'id'],
+            ['R', 'Get User %m.user_id', 'get_user', 'id'],//new
 
             // ['R', 'Get Post IDs', 'get_post_ids', 1],
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
@@ -184,7 +191,7 @@
         menus : {
           post_pagination: ['post_next', 'post_previous'],
           api_base: ['api_base', 'api_namespace', 'api_endpoint'],
-          user_id: ['id', 'name'],
+          user_id: ['id', 'name', 'description', 'avatar_urls'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' 
         // Link to extension documentation, homepage, etc.
