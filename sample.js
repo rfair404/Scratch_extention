@@ -71,12 +71,12 @@
         });
     };
 
-    ext.test_new_url = function(callback, ns){
+    ext.get_wp_v2_data = function(callback, ns){
        $.ajax({
               url: this.get_api_base() + this.get_api_namespace(),
               dataType: 'json',
               success: function(ret){
-                alert(ret);
+                console.log(ret);
                 callback(ret);
               }
         });
@@ -132,13 +132,15 @@
       console.log('New "next post" is '+post_start);
     }
 
-    ext.get_admin_user = function(callback) {
+    ext.get_user = function(callback, user_id) {
         // Make an AJAX call to the WordPress REST API to get site description
+        console.log(user_id);
         $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/user/1',
+              url: this.get_api_base() + this.get_api_namespace() + '/user/' + user_id,
               dataType: 'json',
               success: function(ret){
-                callback(ret.description);
+                console.log(ret);
+                callback(ret);
               }
         });
     };
@@ -149,11 +151,13 @@
             ['h', 'Enable WordPress REST API', 'start'],
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://rest-api-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
-            ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],
-            ['R', 'Site Description', 'get_site_description'],
-            // ['R', '!ALL POST', 'get_posts'],
-            // ['R', 'test new url', 'test_new_url'],
-            ['R', 'Admin User', 'get_admin_user'],
+            ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],//new
+            ['R', 'Site Description', 'get_site_description'],//new
+            
+            [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
+            
+            ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
+            ['R', 'User Name', 'get_user'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post_id', 'post_now'],
@@ -164,6 +168,7 @@
         menus : {
           post_pagination: ['post_next', 'post_previous'],
           api_base: ['api_base', 'api_namespace', 'api_endpoint'],
+          user_id: ['user_id'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' 
         // Link to extension documentation, homepage, etc.
