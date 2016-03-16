@@ -126,7 +126,7 @@
                 // console.log(ret);
                 switch (post_data) {
                   case "title": 
-                  case "description":
+                  case "content":
                     callback(ret[post_data]['rendered']);
                   break;
                   default:
