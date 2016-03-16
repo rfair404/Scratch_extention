@@ -106,12 +106,12 @@
         });
     };
 
-    ext.set_post_id = function(current_post, value) {
+    ext.set_current_post_id = function(value) {
       console.log('current post set to '+ value);
-      this.current_user = value;
+      this.current_post = value;
     }
 
-    ext.get_current_post = function() {
+    ext.get_current_post_id = function() {
       // console.log(this.current_post);
       return this.current_post;
     }
@@ -174,7 +174,7 @@
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://rest-api-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
-            [' ', 'Set current_post to %n', 'set_post_id', 'current_post', '1'],
+            [' ', 'Set current_post to %n', 'set_current_post_id', '1'],
 
             ['R', 'Site Title', 'get_site_title'],//new
             ['R', 'Site Description', 'get_site_description'],//new
