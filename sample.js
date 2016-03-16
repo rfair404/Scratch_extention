@@ -27,12 +27,16 @@
     }
     
     ext.set_api_base = function(api_base, value) {
-      ext.api_base = value;
+      this.api_base = value;
       console.log('API base is: '+value);
     }
 
+    ext.get_api_namespace = function() {
+      return this.api_namespace;
+    }
+
     ext.set_api_namespace = function(api_namespace, value) {
-      api_namespace = value;
+      this.api_namespace = value;
       console.log('namespace is: '+value);
     }
 
