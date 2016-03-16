@@ -24,9 +24,9 @@
 
    ext.get_site_title = function(callback, api_base, api_namespace) {
           // Make an AJAX call to the WordPress REST API for the site title
-          console.log();
+          console.log(api_base);
           $.ajax({
-                url: ext.api_base,
+                url: api_base,
                 dataType: 'json',
                 success: function(ret){
                   callback(ret.name);
