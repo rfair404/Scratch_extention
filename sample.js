@@ -95,7 +95,7 @@
       return this.current_user;
     }
 
-    ext.get_user = function(callback, user_data) {
+    ext.get_user = function(user_data, callback) {
       console.log(user_data);
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
