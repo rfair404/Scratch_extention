@@ -1,5 +1,5 @@
 (function(ext) {
-
+    var current_user = 1;
     var post_start = 1;
     var post_next = 1;
     var post_previous = 1;
@@ -71,7 +71,7 @@
         });
     };
 
-    ext.get_wp_v2_data = function(callback, ns){
+    ext.get_wp_v2_data = function(callback){
        $.ajax({
               url: this.get_api_base() + this.get_api_namespace(),
               dataType: 'json',
@@ -81,6 +81,33 @@
               }
         });
     };
+
+    ext.set_current_user = function(current_user, value){
+      // this is a bit of a misnomer as "current user" is a wp term 
+      // and implies authentication which is not yet built
+
+      // console.log('current user set to '+ value);
+      this.current_user = value;
+    }
+
+    ext.get_current_user = function() {
+      return this.current_user;
+    }
+
+    ext.get_user = function(callback) {
+        // Make an AJAX call to the WordPress REST API to get site description
+        console.log(user_id);
+        $.ajax({
+              url: this.get_api_base() + this.get_api_namespace() + '/user/' + user_id,
+              dataType: 'json',
+              success: function(ret){
+                console.log(ret);
+                callback(ret);
+              }
+        });
+    };
+
+    //im here
 
     ext.get_next_post_id = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
@@ -132,19 +159,6 @@
       console.log('New "next post" is '+post_start);
     }
 
-    ext.get_user = function(callback, user_id) {
-        // Make an AJAX call to the WordPress REST API to get site description
-        console.log(user_id);
-        $.ajax({
-              url: this.get_api_base() + this.get_api_namespace() + '/user/' + user_id,
-              dataType: 'json',
-              success: function(ret){
-                console.log(ret);
-                callback(ret);
-              }
-        });
-    };
-
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
@@ -153,10 +167,10 @@
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],//new
             ['R', 'Site Description', 'get_site_description'],//new
-            
+            ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             
-            ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
+
             ['R', 'User Name', 'get_user'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
