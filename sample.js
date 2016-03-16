@@ -22,13 +22,21 @@
         return value;
     };
 
+    ext.start = function() {
+      return true;
+    };
+
+    ext.say = function() {
+
+    };
+
     ext.get_api_base = function() {
       return this.api_base;
     }
     
     ext.set_api_base = function(api_base, value) {
       this.api_base = value;
-      console.log('API base is: '+value);
+      //console.log('API base is: '+value);
     }
 
     ext.get_api_namespace = function() {
@@ -37,12 +45,12 @@
 
     ext.set_api_namespace = function(api_namespace, value) {
       this.api_namespace = value;
-      console.log('namespace is: '+value);
+      //console.log('namespace is: '+value);
     }
 
     ext.get_site_title = function(callback) {
           // Make an AJAX call to the WordPress REST API for the site title
-          console.log('Getting site title');
+          //console.log('Getting site title');
           $.ajax({
                 url: this.get_api_base(),
                 dataType: 'json',
@@ -135,25 +143,16 @@
         });
     };
 
-  	ext.start = function() {
-  		return true;
-  	};
-
-  	ext.say = function() {
-
-  	};
-
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
             ['h', 'Enable WordPress REST API', 'start'],
             [' ', 'Set %m.api_base to %s', 'set_api_base', 'api_base', 'http://rest-api-demo.q21.co/wp-json/'],
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
-
             ['R', 'Site Title', 'get_site_title', 'api_base', 'api_namespace'],
             ['R', 'Site Description', 'get_site_description'],
-            ['R', '!ALL POST', 'get_posts'],
-            ['R', 'test new url', 'test_new_url'],
+            // ['R', '!ALL POST', 'get_posts'],
+            // ['R', 'test new url', 'test_new_url'],
             ['R', 'Admin User', 'get_admin_user'],
             ['R', 'Get Post IDs', 'get_post_ids', 1],
             ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
