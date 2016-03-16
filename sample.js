@@ -86,7 +86,7 @@
       // this is a bit of a misnomer as "current user" is a wp term 
       // and implies authentication which is not yet built
 
-      // console.log('current user set to '+ value);
+      console.log('current user set to '+ value);
       this.current_user = value;
     }
 
