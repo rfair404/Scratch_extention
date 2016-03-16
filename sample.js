@@ -139,7 +139,7 @@
     };
 
     ext.set_current_post_offset = function(value) {
-      console.log('offset set to '+value);
+      //console.log('offset set to '+value);
       this.current_post_offset = value;
     }
 
@@ -161,24 +161,27 @@
       post_start++;
     };
 
-//now here
+    ext.get_p_data = function(p_data, callback) {
+      //handle pagination somehow???
 
-    // ext.get_post_ids = function(callback) {
-    //   //handle pagination somehow???
+      // Make an AJAX call to the WordPress REST API to get a collection of post ids
+      $.ajax({
+        url: this.get_api_base() + this.get_api_namespace() + '/posts/,
+        //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
+        dataType: 'json',
+              success: function(ret){
+                console.log(ret);
+                console.log(p_data);
 
-    //   // Make an AJAX call to the WordPress REST API to get a collection of post ids
-    //   $.ajax({
-    //      url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/',
-    //     dataType: 'json',
-    //           success: function(ret){
-    //             var post_ids = [];
-    //             for (var i = ret.length - 1; i >= 0; i--) {
-    //               post_ids.push(ret[i]['id']);
-    //             };
-    //             callback(post_ids);
-    //           }
-    //     });
-    // };
+                // for (var i = ret.length - 1; i >= 0; i--) {
+                //   post_ids.push(ret[i]['id']);
+                // };
+                callback(post_ids);
+              }
+        });
+    };
+
+    //refactored to here
 
     // ext.get_post_by_id = function(callback) {
     //       // @TODO handle pagination somehow???
@@ -215,8 +218,8 @@
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
             ['R', 'Get User %m.user_id', 'get_user', 'id'],//new
             ['R', 'Get Post %m.post_id', 'get_post', 'id'],
-
-            // ['R', 'Get Post IDs', 'get_post_ids', 1],
+            ['R', 'Get P data %m.p_data', 'get_p_data', 'count'],
+            get_p_data
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post_id'],
             // [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
@@ -228,7 +231,7 @@
           api_base: ['api_base', 'api_namespace', 'api_endpoint'],
           user_id: ['id', 'name', 'description', 'avatar_urls'],
           post_id: ['id', 'date', 'title', 'content'],
-
+          p_data: ['count', 'foo'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' 
         // Link to extension documentation, homepage, etc.
