@@ -181,27 +181,14 @@
         });
     };
 
+    ext.access_scratch_dataset = function (data) }
+      console.log(data);
+    }
+
     //refactored to here
 
-    // ext.get_post_by_id = function(callback) {
-    //       // @TODO handle pagination somehow???
-    //       console.log(post_id);
-    //     // Make an AJAX call to the WordPress REST API to get a collection of post ids
-    //     $.ajax({
-    //           url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts/'+post_id+'',
-    //           dataType: 'json',
-    //           success: function(ret){
-    //             console.log(ret);
-    //             callback('yepp');
-    //           }
-    //     });
-    // };
 
 
-    // ext.set_post = function(post, value) {
-    //   post_start = value;
-    //   console.log('New "next post" is '+post_start);
-    // }
 
     // Block and block menu descriptions
     var descriptor = {
@@ -212,18 +199,18 @@
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             [' ', 'Set current_post to %n', 'set_current_post_id', '1'],
             [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '0'],
-
-            ['R', 'Site Title', 'get_site_title'],//new
-            ['R', 'Site Description', 'get_site_description'],//new
-            ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
-            ['R', 'Get User %m.user_id', 'get_user', 'id'],//new
+            [' ', 'Try endpoint current_post_offset to %n', 'set_current_post_offset', '0'],
+            ['R', 'Get Site Title', 'get_site_title'],
+            ['R', 'Get Site Description', 'get_site_description'],
+            ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],
+            ['R', 'Get User %m.user_id', 'get_user', 'id'],
             ['R', 'Get Post %m.post_id', 'get_post', 'id'],
             ['R', 'Get P data %m.p_data', 'get_p_data', 'count'],
             // stop here : get_p_data
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post_id'],
             // [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
-            // [' ', 'Access', 'access_scratch_dataset'],
+            ['r', 'Tryr', 'access_scratch_dataset', 'variables'],
 
         ],
         menus : {
