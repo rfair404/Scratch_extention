@@ -125,15 +125,13 @@
               success: function(ret){
                 // console.log(ret);
                 switch (post_data) {
-                  case 'title': 
+                  case "title": 
+                  case "description":
                     callback(ret[post_data]['rendered']);
-                    break;
-                  case 'description';
-                    callback(ret[post_data]['rendered']);
-                    break;
+                  break;
                   default:
                     callback(ret[post_data]);
-                    break;
+                  break;
                 }
               }
         });
