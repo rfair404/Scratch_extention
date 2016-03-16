@@ -96,14 +96,14 @@
     }
 
     ext.get_user = function(user_data, callback) {
-      console.log(user_data);
+      // console.log(user_data);
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
               url: this.get_api_base() + this.get_api_namespace() + '/users/' + this.get_current_user(),
               dataType: 'json',
               success: function(ret){
-                console.log(ret);
-                callback(ret);
+                // console.log(ret);
+                callback(ret[user_data]);
               }
         });
     };
@@ -172,7 +172,7 @@
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],//new
 
             //['R', 'User Name', 'get_user'],
-            ['R', 'Get %m.user_id', 'get_user', 'user_id'],
+            ['R', 'Get %m.user_id', 'get_user', 'id'],
 
             // ['R', 'Get Post IDs', 'get_post_ids', 1],
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
@@ -184,7 +184,7 @@
         menus : {
           post_pagination: ['post_next', 'post_previous'],
           api_base: ['api_base', 'api_namespace', 'api_endpoint'],
-          user_id: ['user_id', 'user_name'],
+          user_id: ['id', 'name'],
         },
         url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' 
         // Link to extension documentation, homepage, etc.
