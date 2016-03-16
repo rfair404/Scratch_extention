@@ -98,7 +98,7 @@
         // Make an AJAX call to the WordPress REST API to get site description
         console.log(this.current_user);
         $.ajax({
-              url: this.get_api_base() + this.get_api_namespace() + '/user/' + current_user,
+              url: this.get_api_base() + this.get_api_namespace() + '/user/' + this.get_current_user(),
               dataType: 'json',
               success: function(ret){
                 console.log(ret);
