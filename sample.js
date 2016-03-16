@@ -138,7 +138,7 @@
         });
     };
 
-    ext.set_current_post_offset = function(offset, value) {
+    ext.set_current_post_offset = function(value) {
       console.log('offset set to '+value);
       this.current_post_offset = value;
     }
