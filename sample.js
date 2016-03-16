@@ -219,7 +219,7 @@
             ['R', 'Get User %m.user_id', 'get_user', 'id'],//new
             ['R', 'Get Post %m.post_id', 'get_post', 'id'],
             ['R', 'Get P data %m.p_data', 'get_p_data', 'count'],
-            get_p_data
+            // stop here : get_p_data
             // ['R', 'Get Post by ID', 'get_post_by_id', 'post_now'],
             ['R', 'Next Post', 'get_next_post_id'],
             // [' ', 'Set %m.post_pagination to %n', 'set_post', 'post_start', '1'],
