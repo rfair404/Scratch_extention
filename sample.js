@@ -3,8 +3,8 @@
     var post_start = 1;
     var post_next = 1;
     var post_previous = 1;
-    var api_base =  'nothing set';
-    var api_namespace = 'so far not working';
+    var api_base = '';
+    var api_namespace = '';
     var api_endpoint = '';
 
     // Cleanup function when the extension is unloaded
@@ -40,11 +40,9 @@
       console.log('namespace is: '+value);
     }
 
-
     ext.get_site_title = function(callback) {
           // Make an AJAX call to the WordPress REST API for the site title
           console.log('Getting site title');
-          console.log('API base: '+api_base);
           $.ajax({
                 url: this.get_api_base(),
                 dataType: 'json',
@@ -57,7 +55,7 @@
      ext.get_site_description = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
-              url: 'http://rest-api-demo.q21.co/wp-json/',
+              url: this.get_api_base(),
               dataType: 'json',
               success: function(ret){
                 callback(ret.description);
@@ -67,7 +65,7 @@
 
     ext.test_new_url = function(callback, ns){
        $.ajax({
-              url: api_base+'/'+ns,
+              url: this.get_api_base() + this.get_api_namespace(),
               dataType: 'json',
               success: function(ret){
                 alert(ret);
