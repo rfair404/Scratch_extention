@@ -2,6 +2,7 @@
     var current_user = 1;
     var current_post_id = 1;
     var current_post_offset = 0;
+    var user_defined_endpoint = '';
     var api_base = '';
     var api_namespace = '';
     var api_endpoint = '';
@@ -147,6 +148,27 @@
       return this.current_post_offset;
     }
 
+    ext.set_user_defined_endpoint = function(value) {
+      //console.log('offset set to '+value);
+      this.user_defined_endpoint = value;
+    }
+
+    ext.get_user_defined_input = function() {
+      return this.user_defined_endpoint;
+    }
+
+    ext.get_user_defined_endpoint_data = function() {
+        $.ajax({
+          url: this.get_api_base() + this.get_api_namespace() + this.get_user_defined_input(),
+          //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
+          dataType: 'json',
+          success: function(ret){
+            console.log(ret);
+            callback(ret[0]['id']);
+          }
+        });
+              
+    }
     ext.get_next_post_id = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
@@ -200,8 +222,11 @@
             [' ', 'Set current_post to %n', 'set_current_post_id', '1'],
             [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '0'],
             [' ', 'Try endpoint current_post_offset to %n', 'set_current_post_offset', '0'],
+            [' ', 'Set endpoint current_post_offset to %n', 'set_user_defined_endpoint', '0'],
+            
             ['R', 'Get Site Title', 'get_site_title'],
             ['R', 'Get Site Description', 'get_site_description'],
+            ['R', 'Get User Endpoint', 'get_user_defined_endpoint_data'],
             ['R', 'Log API Endpoint Data', 'get_wp_v2_data'],
             ['R', 'Get User %m.user_id', 'get_user', 'id'],
             ['R', 'Get Post %m.post_id', 'get_post', 'id'],
