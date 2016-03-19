@@ -82,12 +82,10 @@
         });
     };
 
-<<<<<<< HEAD
          ext.get_post_ids = function(callback, scratch_id) {
             console.log(scratch_id);
             //find out what the first thing thrown is,
             post_ids = [];
-=======
     ext.set_current_user = function(current_user, value){
       // this is a bit of a misnomer as "current user" is a wp term
       // and implies authentication which is not yet built
@@ -100,7 +98,6 @@
       // console.log(this.current_user);
       return this.current_user;
     }
->>>>>>> a15325bb97b413da60b76d67502a91ae41b4fd78
 
     ext.get_user = function(user_data, callback) {
       // console.log(user_data);
@@ -109,23 +106,17 @@
               url: this.get_api_base() + this.get_api_namespace() + '/users/' + this.get_current_user(),
               dataType: 'json',
               success: function(ret){
-<<<<<<< HEAD
                 ret.each(function(counter){
                     // post_ids[] = this
                     console.log(this.id);
                 });
                 console.log(postcounter_scratchx);
                 callback(ret[0]);
-=======
                 // console.log(ret);
                 callback(ret[user_data]);
->>>>>>> a15325bb97b413da60b76d67502a91ae41b4fd78
               }
         });
-<<<<<<< HEAD
         postcounter_scratchx = postcounter_scratchx + 1;
-=======
->>>>>>> a15325bb97b413da60b76d67502a91ae41b4fd78
     };
 
     ext.set_current_post_id = function(value) {
