@@ -220,9 +220,9 @@
             [' ', 'Set %m.api_base to %s', 'set_api_namespace', 'api_namespace', 'wp/v2'],
             [' ', 'Set %m.user_id to %n', 'set_current_user', 'current_user', '1'],
             [' ', 'Set current_post to %n', 'set_current_post_id', '1'],
-            [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '/posts'],
+            [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '0'],
             //[' ', 'Try endpoint current_post_offset to %n', 'set_current_post_offset', '0'],
-            [' ', 'Set endpoint current_post_offset to %s', 'set_user_defined_endpoint', '0'],
+            [' ', 'Set custom endpoint to %s', 'set_user_defined_endpoint', '/posts'],
             
             ['R', 'Get Site Title', 'get_site_title'],
             ['R', 'Get Site Description', 'get_site_description'],
