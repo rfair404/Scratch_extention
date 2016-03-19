@@ -151,6 +151,7 @@
     ext.set_user_defined_endpoint = function(value) {
       //console.log('offset set to '+value);
       this.user_defined_endpoint = value;
+      console.log("set UDE to " + this.user_defined_endpoint());
     }
 
     ext.get_user_defined_endpoint = function() {
