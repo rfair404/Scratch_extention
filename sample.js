@@ -159,7 +159,6 @@
     }
 
     ext.set_user_defined_endpoint_return_key = function(value) {
-      //console.log('offset set to '+value);
       this.user_defined_endpoint_return_key = value;
     }
 
@@ -169,7 +168,7 @@
 
     ext.get_user_defined_endpoint_data = function() {
         $.ajax({
-          url: this.get_api_base() + this.get_api_namespace() + this.get_user_defined_input(),
+          url: this.get_api_base() + this.get_api_namespace() + this.get_user_defined_endpoint(),
           //url: 'http://rest-api-demo.q21.co/wp-json/wp/v2/posts?per_page=1&page='+post_start+'',
           dataType: 'json',
           success: function(ret){
