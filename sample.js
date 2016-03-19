@@ -153,8 +153,17 @@
       this.user_defined_endpoint = value;
     }
 
-    ext.get_user_defined_input = function() {
+    ext.get_user_defined_endpoint = function() {
       return this.user_defined_endpoint;
+    }
+
+    ext.set_user_defined_endpoint_return_key = function(value) {
+      //console.log('offset set to '+value);
+      this.user_defined_endpoint_return_key = value;
+    }
+
+    ext.get_user_defined_endpoint_return_key = function() {
+      return this.user_defined_endpoint_return_key;
     }
 
     ext.get_user_defined_endpoint_data = function() {
@@ -164,7 +173,7 @@
           dataType: 'json',
           success: function(ret){
             console.log(ret);
-            callback(ret[0]['id']);
+            callback(ret[this.get_user_defined_input_return_key()]);
           }
         });
               
