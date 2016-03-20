@@ -32,21 +32,21 @@
 
     ext.get_api_base = function() {
       return this.api_base;
-    }
+    };
     
     ext.set_api_base = function(api_base, value) {
       this.api_base = value;
       //console.log('API base is: '+value);
-    }
+    };
 
     ext.get_api_namespace = function() {
       return this.api_namespace;
-    }
+    };
 
     ext.set_api_namespace = function(api_namespace, value) {
       this.api_namespace = value;
       //console.log('namespace is: '+value);
-    }
+    };
 
     ext.get_site_title = function(callback) {
           // Make an AJAX call to the WordPress REST API for the site title
@@ -58,9 +58,9 @@
                   callback(ret.name);
                 }
           });
-      };
+    };
 
-     ext.get_site_description = function(callback) {
+    ext.get_site_description = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
               url: this.get_api_base(),
@@ -88,12 +88,12 @@
 
       //console.log('current user set to '+ value);
       this.current_user = value;
-    }
+    };
 
     ext.get_current_user = function() {
       // console.log(this.current_user);
       return this.current_user;
-    }
+    };
 
     ext.get_user = function(user_data, callback) {
       // console.log(user_data);
@@ -111,12 +111,12 @@
     ext.set_current_post_id = function(value) {
       //console.log('current post set to '+ value);
       this.current_post_id = value;
-    }
+    };
 
     ext.get_current_post_id = function() {
       // console.log(this.current_post);
       return this.current_post_id;
-    }
+    };
 
     ext.get_post = function(post_data, callback) {
       // console.log(post_data);
@@ -142,29 +142,29 @@
     ext.set_current_post_offset = function(value) {
       //console.log('offset set to '+value);
       this.current_post_offset = value;
-    }
+    };
 
     ext.get_current_post_offset = function() {
       return this.current_post_offset;
-    }
+    };
 
     ext.set_user_defined_endpoint = function(value) {
       //console.log('offset set to '+value);
       this.user_defined_endpoint = value;
       console.log("set UDE to " + this.user_defined_endpoint());
-    }
+    };
 
     ext.get_user_defined_endpoint = function() {
       return this.user_defined_endpoint;
-    }
+    };
 
     ext.set_user_defined_endpoint_return_key = function(value) {
       this.user_defined_endpoint_return_key = value;
-    }
+    };
 
     ext.get_user_defined_endpoint_return_key = function() {
       return this.user_defined_endpoint_return_key;
-    }
+    };
 
     ext.get_user_defined_endpoint_data = function(callback) {
         $.ajax({
@@ -177,7 +177,8 @@
           }
         });
               
-    }
+    };
+
     ext.get_next_post_id = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
         $.ajax({
@@ -217,9 +218,6 @@
     };
 
     //refactored to here
-
-
-
 
     // Block and block menu descriptions
     var descriptor = {
