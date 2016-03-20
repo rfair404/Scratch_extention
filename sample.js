@@ -33,7 +33,7 @@
     ext.get_api_base = function() {
       return this.api_base;
     }
-
+    
     ext.set_api_base = function(api_base, value) {
       this.api_base = value;
       //console.log('API base is: '+value);
@@ -82,12 +82,8 @@
         });
     };
 
-         ext.get_post_ids = function(callback, scratch_id) {
-            console.log(scratch_id);
-            //find out what the first thing thrown is,
-            post_ids = [];
     ext.set_current_user = function(current_user, value){
-      // this is a bit of a misnomer as "current user" is a wp term
+      // this is a bit of a misnomer as "current user" is a wp term 
       // and implies authentication which is not yet built
 
       //console.log('current user set to '+ value);
@@ -106,17 +102,10 @@
               url: this.get_api_base() + this.get_api_namespace() + '/users/' + this.get_current_user(),
               dataType: 'json',
               success: function(ret){
-                ret.each(function(counter){
-                    // post_ids[] = this
-                    console.log(this.id);
-                });
-                console.log(postcounter_scratchx);
-                callback(ret[0]);
                 // console.log(ret);
                 callback(ret[user_data]);
               }
         });
-        postcounter_scratchx = postcounter_scratchx + 1;
     };
 
     ext.set_current_post_id = function(value) {
@@ -138,7 +127,7 @@
               success: function(ret){
                 // console.log(ret);
                 switch (post_data) {
-                  case "title":
+                  case "title": 
                   case "content":
                     callback(ret[post_data]['rendered']);
                   break;
@@ -187,7 +176,7 @@
             callback(ret[this.get_user_defined_input_return_key()]);
           }
         });
-
+              
     }
     ext.get_next_post_id = function(callback) {
         // Make an AJAX call to the WordPress REST API to get site description
@@ -243,7 +232,7 @@
             [' ', 'Set current_post_offset to %n', 'set_current_post_offset', '0'],
             //[' ', 'Try endpoint current_post_offset to %n', 'set_current_post_offset', '0'],
             [' ', 'Set custom endpoint to %s', 'set_user_defined_endpoint', '/posts'],
-
+            
             ['R', 'Get Site Title', 'get_site_title'],
             ['R', 'Get Site Description', 'get_site_description'],
             ['R', 'Get User Endpoint', 'get_user_defined_endpoint_data'],
@@ -265,10 +254,10 @@
           post_id: ['id', 'date', 'title', 'content'],
           p_data: ['count', 'foo'],
         },
-        url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX'
+        url: 'http://rfair404.github.io/WP-REST-API-FOR-SCRATCHX' 
         // Link to extension documentation, homepage, etc.
     };
 
     // Register the extension
     ScratchExtensions.register('WORDPRESS-REST-API', descriptor, ext);
-});
+})({});
