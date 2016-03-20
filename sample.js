@@ -271,4 +271,4 @@
 
     // Register the extension
     ScratchExtensions.register('WORDPRESS-REST-API', descriptor, ext);
-})({});
+});
